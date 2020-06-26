@@ -1,9 +1,7 @@
-/* 
-we want to prepareFood which will take 20ms and then want to prepare frenchtoast which will take 10ms
-but when we execute this code frenchtoast is ready after 10ms and then food preparation is done at 20ms
-this problem is soleved in index1.js using callbacks.
+/*
+Here we have used callbacks for 2 tasks so 2 functions and 2 callbacks
 */
-console.log("index.js");
+console.log("index1.js");
 console.log("Breakfast");
 
 function prepareFood(callback) {
@@ -16,6 +14,7 @@ function prepareFood(callback) {
 
 function prepareFoodCallback(value) {
     console.log("prepareFoodCallback :", value);
+    prepareFrenchToast(prepareFrenchToastCallback);
 }
 
 function prepareFrenchToast(callback) {
@@ -31,6 +30,6 @@ function prepareFrenchToastCallback(value) {
 }
 
 prepareFood(prepareFoodCallback);
-prepareFrenchToast(prepareFrenchToastCallback);
+
 
 console.log("Dinner");
